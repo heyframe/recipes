@@ -63,7 +63,6 @@ jobs:
                            "heyframe/conflicts": "${{ matrix.conflict-version }}",
                            "heyframe/administration": "${{ matrix.package }}",
                            "heyframe/core": "${{ matrix.package }}",
-                           "heyframe/elasticsearch": "${{ matrix.package }}",
                            "heyframe/frontend": "${{ matrix.package }}",
                            "heyframe/dev-tools": "*",
                            "symfony/flex": "~2",
