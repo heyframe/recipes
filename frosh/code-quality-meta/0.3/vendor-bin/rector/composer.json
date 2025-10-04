@@ -1,6 +1,0 @@
-{
-    "require-dev": {
-        "rector/rector": "^1.0",
-        "frosh/heyframe-rector": "^0.4.0"
-    }
-}

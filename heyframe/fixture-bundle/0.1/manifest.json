@@ -1,7 +1,0 @@
-{
-    "bundles": {
-        "HeyFrame\\FixtureBundle\\FixtureBundle": [
-            "all"
-        ]
-    }
-}

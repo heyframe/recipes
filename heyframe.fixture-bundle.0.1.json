@@ -1,0 +1,15 @@
+{
+    "manifests": {
+        "heyframe/fixture-bundle": {
+            "manifest": {
+                "bundles": {
+                    "HeyFrame\\FixtureBundle\\FixtureBundle": [
+                        "all"
+                    ]
+                }
+            },
+            "files": [],
+            "ref": "f0f66aff073861105a3c2fb7198e7881e039b4c6"
+        }
+    }
+}
