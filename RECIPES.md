@@ -20,7 +20,6 @@ Additional recipes can be found on the [Main Recipes Repository](https://github.
 | [heyframe/frontend](https://packagist.org/packages/heyframe/frontend) | [6.7](heyframe/frontend/6.7) |  |
 | [heyframe/platform](https://packagist.org/packages/heyframe/platform) | [6.7](heyframe/platform/6.7) |  |
 | [nyholm/psr7](https://packagist.org/packages/nyholm/psr7) | [1.0](nyholm/psr7/1.0) |  |
-| [open-telemetry/opentelemetry-logger-monolog](https://packagist.org/packages/open-telemetry/opentelemetry-logger-monolog) | [1.0](open-telemetry/opentelemetry-logger-monolog/1.0) |  |
 | [pentatrion/vite-bundle](https://packagist.org/packages/pentatrion/vite-bundle) | [6.5](pentatrion/vite-bundle/6.5) |  |
 | [sroze/messenger-enqueue-transport](https://packagist.org/packages/sroze/messenger-enqueue-transport) | [0.4](sroze/messenger-enqueue-transport/0.4) |  |
 | [symfony/amqp-messenger](https://packagist.org/packages/symfony/amqp-messenger) | [5.4](symfony/amqp-messenger/5.4) | `amqp-messenger`, `amqpmessenger` |
