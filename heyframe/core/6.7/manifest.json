@@ -30,9 +30,6 @@
         ],
         "HeyFrame\\Core\\Profiling\\Profiling": [
             "all"
-        ],
-        "HeyFrame\\Core\\Service\\Service": [
-            "all"
         ]
     },
     "container": {
