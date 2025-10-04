@@ -31,9 +31,6 @@
         "HeyFrame\\Core\\Profiling\\Profiling": [
             "all"
         ],
-        "HeyFrame\\Core\\Service\\Service": [
-            "all"
-        ],
         "HeyFrame\\Administration\\Administration": [
             "all"
         ],
