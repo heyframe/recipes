@@ -1,0 +1,15 @@
+{
+    "bundles": {
+        "HeyFrame\\Frontend\\Frontend": [
+            "all"
+        ]
+    },
+    "copy-from-recipe": {
+        "bin/": "%BIN_DIR%/"
+    },
+    "env": {
+        "PROXY_URL": "http://localhost",
+        "HEYFRAME_HTTP_CACHE_ENABLED": "1",
+        "HEYFRAME_HTTP_DEFAULT_TTL": "7200"
+    }
+}
