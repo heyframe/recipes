@@ -102,8 +102,8 @@
 
   # HeyFrame 6 related scripts
   scripts.build-js.exec = lib.mkDefault "bin/build-js.sh";
-  scripts.build-storefront.exec = lib.mkDefault "bin/build-storefront.sh";
-  scripts.watch-storefront.exec = lib.mkDefault "bin/watch-storefront.sh";
+  scripts.build-frontend.exec = lib.mkDefault "bin/build-frontend.sh";
+  scripts.watch-frontend.exec = lib.mkDefault "bin/watch-frontend.sh";
   scripts.build-administration.exec = lib.mkDefault "bin/build-administration.sh";
   scripts.watch-administration.exec = lib.mkDefault "bin/watch-administration.sh";
   scripts.theme-refresh.exec = lib.mkDefault "bin/console theme-refresh";

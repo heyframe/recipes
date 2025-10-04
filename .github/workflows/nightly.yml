@@ -74,7 +74,7 @@ jobs:
                            "heyframe/administration": "${{ matrix.package }}",
                            "heyframe/core": "${{ matrix.package }}",
                            "heyframe/elasticsearch": "${{ matrix.package }}",
-                           "heyframe/storefront": "${{ matrix.package }}",
+                           "heyframe/frontend": "${{ matrix.package }}",
                            "heyframe/dev-tools": "*",
                            "symfony/flex": "~2",
                            "symfony/runtime": "^5.0|^6.0|^7.0"
@@ -153,5 +153,5 @@ jobs:
             - name: Build admin
               run: ./bin/build-administration.sh
 
-            - name: Build storefront
-              run: ./bin/build-storefront.sh
+            - name: Build frontend
+              run: ./bin/build-frontend.sh

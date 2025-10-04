@@ -60,4 +60,4 @@ rules:
 	- HeyFrame\Core\DevOps\StaticAnalyze\PHPStan\Rules\AbstractClassUsageRule
 	- HeyFrame\Core\DevOps\StaticAnalyze\PHPStan\Rules\DecorationPatternRule
 	- HeyFrame\Core\DevOps\StaticAnalyze\PHPStan\Rules\ExtensionRule
-	- HeyFrame\Core\DevOps\StaticAnalyze\PHPStan\Rules\NoNewRequestInStorefrontRule
+	- HeyFrame\Core\DevOps\StaticAnalyze\PHPStan\Rules\NoNewRequestInFrontendRule

@@ -9,7 +9,7 @@ mkdir("heyframe/platform", 0777, true);
 $components = [
     'core',
     'administration',
-    'storefront',
+    'frontend',
     'elasticsearch',
 ];
 

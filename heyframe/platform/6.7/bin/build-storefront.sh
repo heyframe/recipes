@@ -12,9 +12,9 @@ export NPM_CONFIG_AUDIT=false
 export NPM_CONFIG_UPDATE_NOTIFIER=false
 
 if [[ -e "${PROJECT_ROOT}/vendor/heyframe/platform" ]]; then
-    STOREFRONT_ROOT="${STOREFRONT_ROOT:-"${PROJECT_ROOT}/vendor/heyframe/platform/src/Storefront"}"
+    STOREFRONT_ROOT="${STOREFRONT_ROOT:-"${PROJECT_ROOT}/vendor/heyframe/platform/src/Frontend"}"
 else
-    STOREFRONT_ROOT="${STOREFRONT_ROOT:-"${PROJECT_ROOT}/vendor/heyframe/storefront"}"
+    STOREFRONT_ROOT="${STOREFRONT_ROOT:-"${PROJECT_ROOT}/vendor/heyframe/frontend"}"
 fi
 
 BIN_TOOL="${CWD}/console"
@@ -27,7 +27,7 @@ if [[ ${CI:-""} ]]; then
     fi
 fi
 
-# build storefront
+# build frontend
 [[ ${HEYFRAME_SKIP_BUNDLE_DUMP:-""} ]] || "${BIN_TOOL}" bundle:dump
 [[ ${HEYFRAME_SKIP_FEATURE_DUMP:-""} ]] || "${BIN_TOOL}" feature:dump
 
@@ -37,7 +37,7 @@ if [[ $(command -v jq) ]]; then
     basePaths=()
 
     while read -r config; do
-        srcPath=$(echo "$config" | jq -r '(.basePath + .storefront.path)')
+        srcPath=$(echo "$config" | jq -r '(.basePath + .frontend.path)')
         basePath=$(echo "$config" | jq -r '.basePath')
 
         # the package.json files are always one upper
@@ -54,7 +54,7 @@ if [[ $(command -v jq) ]]; then
             basePaths+=("$basePath")
         fi
 
-        if [[ -f "$path/package.json" && ! -d "$path/node_modules" && $name != "storefront" ]]; then
+        if [[ -f "$path/package.json" && ! -d "$path/node_modules" && $name != "frontend" ]]; then
             echo "=> Installing npm dependencies for ${name}"
 
             (cd "$path" && npm install --prefer-offline)
@@ -78,9 +78,9 @@ else
     echo "Cannot check extensions for required npm installations as jq is not installed"
 fi
 
-npm --prefix "${STOREFRONT_ROOT}"/Resources/app/storefront install --prefer-offline --omit=dev
-node "${STOREFRONT_ROOT}"/Resources/app/storefront/copy-to-vendor.js
-npm --prefix "${STOREFRONT_ROOT}"/Resources/app/storefront run production
+npm --prefix "${STOREFRONT_ROOT}"/Resources/app/frontend install --prefer-offline --omit=dev
+node "${STOREFRONT_ROOT}"/Resources/app/frontend/copy-to-vendor.js
+npm --prefix "${STOREFRONT_ROOT}"/Resources/app/frontend run production
 [[ ${HEYFRAME_SKIP_ASSET_COPY:-""} ]] ||"${BIN_TOOL}" assets:install
 [[ ${HEYFRAME_SKIP_THEME_COMPILE:-""} ]] || "${BIN_TOOL}" theme:compile --active-only
 

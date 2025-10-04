@@ -29,13 +29,13 @@ export STOREFRONT_HTTPS_CERTIFICATE_FILE
 export STOREFRONT_SKIP_SSL_CERT
 
 if [[ -e "${PROJECT_ROOT}/vendor/heyframe/platform" ]]; then
-    STOREFRONT_ROOT="${STOREFRONT_ROOT:-"${PROJECT_ROOT}/vendor/heyframe/platform/src/Storefront"}"
+    STOREFRONT_ROOT="${STOREFRONT_ROOT:-"${PROJECT_ROOT}/vendor/heyframe/platform/src/Frontend"}"
 else
-    STOREFRONT_ROOT="${STOREFRONT_ROOT:-"${PROJECT_ROOT}/vendor/heyframe/storefront"}"
+    STOREFRONT_ROOT="${STOREFRONT_ROOT:-"${PROJECT_ROOT}/vendor/heyframe/frontend"}"
 fi
 
-if [[ ! -d "${STOREFRONT_ROOT}"/Resources/app/storefront/node_modules/webpack-dev-server ]]; then
-    npm --prefix "${STOREFRONT_ROOT}"/Resources/app/storefront install --prefer-offline
+if [[ ! -d "${STOREFRONT_ROOT}"/Resources/app/frontend/node_modules/webpack-dev-server ]]; then
+    npm --prefix "${STOREFRONT_ROOT}"/Resources/app/frontend install --prefer-offline
 fi
 
 "${CWD}"/console bundle:dump
@@ -52,7 +52,7 @@ if [[ $(command -v jq) ]]; then
     cd "$PROJECT_ROOT" || exit
 
     jq -c '.[]' "var/plugins.json" | while read -r config; do
-        srcPath=$(echo "$config" | jq -r '(.basePath + .storefront.path)')
+        srcPath=$(echo "$config" | jq -r '(.basePath + .frontend.path)')
 
         # the package.json files are always one upper
         path=$(dirname "$srcPath")
@@ -64,7 +64,7 @@ if [[ $(command -v jq) ]]; then
             continue
         fi
 
-        if [[ -f "$path/package.json" && ! -d "$path/node_modules" && $name != "storefront" ]]; then
+        if [[ -f "$path/package.json" && ! -d "$path/node_modules" && $name != "frontend" ]]; then
             echo "=> Installing npm dependencies for ${name}"
 
             (cd "$path" && npm install)
@@ -75,4 +75,4 @@ else
     echo "Cannot check extensions for required npm installations as jq is not installed"
 fi
 
-npm --prefix "${STOREFRONT_ROOT}"/Resources/app/storefront run-script hot-proxy
+npm --prefix "${STOREFRONT_ROOT}"/Resources/app/frontend run-script hot-proxy

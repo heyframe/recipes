@@ -1,5 +1,5 @@
 when@prod:
-    storefront:
+    frontend:
         # Uncomment all to enable soft purge
         # http_cache:
         # stale_while_revalidate: 300

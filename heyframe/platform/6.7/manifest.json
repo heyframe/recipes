@@ -37,7 +37,7 @@
         "HeyFrame\\Administration\\Administration": [
             "all"
         ],
-        "HeyFrame\\Storefront\\Storefront": [
+        "HeyFrame\\Frontend\\Frontend": [
             "all"
         ],
         "HeyFrame\\Elasticsearch\\Elasticsearch": [

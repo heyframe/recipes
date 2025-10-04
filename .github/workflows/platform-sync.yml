@@ -7,8 +7,7 @@ on:
         paths:
             - "heyframe/administration/**"
             - "heyframe/core/**"
-            - "heyframe/storefront/**"
-            - "heyframe/elasticsearch/**"
+            - "heyframe/frontend/**"
 jobs:
     platform-sync:
         runs-on: ubuntu-latest
